@@ -1,27 +1,28 @@
-<html>
-  <head>
-    <title>React On Legacy</title>
-</head>
-<style>
-    body {margin: 0; background: white; }
-</style>
-<body class="body">  
-    <span></span>
-    <div id="anySelector">
-        <!-- COMPONENT WILL BE RENDERED HERE -->
-    </div>
-    
-    <!-- IMPORT PRODUCTION BUNDLE OF COMPONENT -->
-    <script src="/static/js/main.js"></script>
-    <script type="text/javascript" src="/static/js/bundle.js"></script>
 
-    <!-- FROM HERE WORK AS WITH REACT COMPONENTS -->
-    <script>
-        // create React component and choose selector
-        var ReactComponent = ReactLegacy.settingsScreen.createComponent.new({ selector: "#anySelector"});
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>React On Legacy</title>
+    </head>
+    <style>
         
-        // use 'render' method on legacy system
-        ReactComponent.render({ prop1: "first prop", prop2: "second prop" });
-    </script>
-</body>
+    </style>
+    <body class="body">  
+        
+        <div id="anySelector">
+            <!-- COMPONENT WILL BE RENDERED HERE -->
+        </div>
+        
+        <!-- IMPORT WEBPACK DEV BUNDLE -->
+        <script type="text/javascript" src="/static/js/bundle.js"></script>
+
+        <!-- FROM HERE WORK AS WITH REACT COMPONENTS -->
+        <script>
+            // create React component and choose DOM selector (where to place component)
+            var ReactComponent = ReactLegacy.settingsScreen.createComponent.new({ selector: "#anySelector"});
+            
+            // use 'render' method on legacy systems
+            ReactComponent.render({ prop1: "first prop", prop2: "second prop" });
+        </script>
+    </body>
 </html>

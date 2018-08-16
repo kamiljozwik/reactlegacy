@@ -1,21 +1,22 @@
 import * as React from 'react';
 
 interface IProps {
-  prop1: string
-  prop2: string
+  prop1: string;
+  prop2: string;
 }
 
 class ComponentForLegacy extends React.Component<IProps> {
-  render() {
+  public render() {
     return (
       <React.Fragment>
-          <div>Hello eRyk !!!</div>
-          <div>{this.props.prop1}</div>
-          <div>{this.props.prop2}</div>
+          <section className="section">
+            <div className="heading">Hello eRyk !!!</div>
+            <div className="prop">{this.props.prop1}</div>
+            <div className="prop">{this.props.prop2}</div>
+          </section>
       </React.Fragment>
     );
   }
 }
-
 
 export default ComponentForLegacy;
